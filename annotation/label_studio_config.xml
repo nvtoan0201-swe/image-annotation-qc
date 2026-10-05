@@ -1,10 +1,10 @@
 <View>
-  <Header value="Target classes: person, car, dog, bicycle. See annotation/LABELING_GUIDELINES.md"/>
+  <Header value="Target classes: person, car, dog, bicycle. See annotation/LABELING_GUIDELINES.md. Hotkeys: 1=person 2=car 3=dog 4=bicycle"/>
   <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false"/>
   <RectangleLabels name="label" toName="image">
-    <Label value="person" background="#1f77b4"/>
-    <Label value="car" background="#ff7f0e"/>
-    <Label value="dog" background="#2ca02c"/>
-    <Label value="bicycle" background="#d62728"/>
+    <Label value="person" background="#1f77b4" hotkey="1"/>
+    <Label value="car" background="#ff7f0e" hotkey="2"/>
+    <Label value="dog" background="#2ca02c" hotkey="3"/>
+    <Label value="bicycle" background="#d62728" hotkey="4"/>
   </RectangleLabels>
 </View>
