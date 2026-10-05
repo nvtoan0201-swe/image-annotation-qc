@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Downloaded / generated data
+data/raw/*
+!data/raw/.gitkeep
+data/reference/
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/images.csv
+data/annotations/*
+!data/annotations/.gitkeep
+!data/annotations/tasks.json
+!data/annotations/annotations.json
+!data/annotations/*.md
+
+# Generated reports and plots
+reports/*
+!reports/.gitkeep
+
+# Label Studio runtime state (database, media, user accounts)
+.labelstudio/
+
+# OS / editor
+.DS_Store
+*.swp
