@@ -39,6 +39,7 @@ paths:
   reference_labels: data/reference/labels
   manifest: data/processed/images.csv
   tasks: data/annotations/tasks.json
+  preannotated_tasks: data/annotations/tasks_preannotated.json
   annotations: data/annotations/annotations.json
   reports: reports
   export: data/processed/yolo

@@ -9,6 +9,21 @@ they must be annotated the same way. If these rules do not cover a case, skip
 the object and record it in `annotation/ANNOTATION_NOTES.md` instead of
 guessing.
 
+## 0. If the image has model pre-annotations
+
+Some tasks may arrive with suggested boxes from a pretrained model
+(`tasks_preannotated.json`). They are **suggestions, not annotations**:
+
+- Verify every suggested box: is the class correct, is the box tight, is it a
+  real object (not a depiction or reflection) per sections 2 and 6?
+- Delete false positives and duplicates.
+- Add every target object the model missed, especially small or occluded ones.
+- Inspect low-confidence suggestions with extra care.
+- Submitting predictions without reviewing them is a QC failure.
+
+All other rules are unchanged: the human is responsible for every box in the
+final dataset.
+
 ## 1. What to label
 
 Label every instance of a target class that is visible in the image and meets

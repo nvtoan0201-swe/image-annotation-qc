@@ -16,6 +16,22 @@ dependencies = [
 dev = [
     "pytest>=8.0",
 ]
+# Optional: model-assisted pre-annotation (pretrained YOLO).
+# Install with: uv sync --group preannotate
+preannotate = [
+    "ultralytics>=8.3",
+    "torch>=2.6",
+    "torchvision>=0.21",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
 
 [build-system]
 requires = ["hatchling"]

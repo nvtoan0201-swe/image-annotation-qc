@@ -45,6 +45,9 @@ uv run scripts/validate_images.py
 
 ### Per image
 
+- [ ] (model-assisted tasks) Every suggested box was reviewed; false
+      positives were deleted, missed objects were added, and nothing was
+      submitted unreviewed.
 - [ ] Every visible target object is labeled (compare against
       `LABELING_GUIDELINES.md` section 1).
 - [ ] No forbidden objects are labeled (other classes, statues, depictions,

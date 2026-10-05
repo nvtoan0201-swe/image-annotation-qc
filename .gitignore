@@ -17,8 +17,14 @@ data/processed/*
 data/annotations/*
 !data/annotations/.gitkeep
 !data/annotations/tasks.json
+!data/annotations/tasks_preannotated.json
 !data/annotations/annotations.json
 !data/annotations/*.md
+
+# Model weights (downloaded on demand)
+models/
+*.pt
+runs/
 
 # Generated reports and plots
 reports/*
