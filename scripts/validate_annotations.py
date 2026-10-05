@@ -106,7 +106,7 @@ def main() -> int:
         print("  MANUAL STEP NOT COMPLETE")
         print(f"  expected annotation file: {paths['annotations']}")
         print("  annotate the images in Label Studio, export as COCO, and place the JSON there")
-        print("  workflow: README.md, section 'Annotation'")
+        print("  workflow: see README.md")
         return 1
 
     manifest = read_manifest(root / paths["manifest"])

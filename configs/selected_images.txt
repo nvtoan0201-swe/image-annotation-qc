@@ -7,7 +7,7 @@
 # NOT the annotations of this project.
 #
 # Derived with the coco128 reference labels (class ids: 0=person, 1=bicycle,
-# 2=car, 16=dog). Deterministic and re-derivable; see data/README.md.
+# 2=car, 16=dog). Deterministic and re-derivable; see README.md.
 #
 # Note: coco128 contains two label files without images (000000000656,
 # 000000000659) and two images without labels (000000000250, 000000000508).
