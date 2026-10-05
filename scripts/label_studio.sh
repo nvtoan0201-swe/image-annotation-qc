@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Runs Label Studio locally for the MANUAL annotation step.
 #
 # Requires Docker. The `docker compose` plugin is not available on every
@@ -19,7 +20,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DATA_DIR="$ROOT/.labelstudio"
 
 usage() {
-    sed -n '3,16p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '/^# Usage:/,/^$/p' "$0" | sed 's/^# \{0,1\}//'
 }
 
 wait_for_server() {
