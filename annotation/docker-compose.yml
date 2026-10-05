@@ -1,0 +1,22 @@
+services:
+  label-studio:
+    image: heartexlabs/label-studio:1.23.2
+    container_name: annotation-qc-label-studio
+    ports:
+      - "8080:8080"
+    environment:
+      LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED: "true"
+      LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT: /label-studio/data
+    volumes:
+      - ../.labelstudio:/label-studio/data
+      - ../data/raw:/label-studio/data/raw:ro
+    restart: unless-stopped
+
+# Start:  docker compose -f annotation/docker-compose.yml up -d
+# Stop:   docker compose -f annotation/docker-compose.yml down
+#
+# On machines without the Docker Compose plugin, use:
+#   ./scripts/label_studio.sh start
+#
+# The container runs as UID 1001; make sure ../.labelstudio exists and is
+# writable by that user (scripts/label_studio.sh does this automatically).

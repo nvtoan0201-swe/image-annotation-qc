@@ -1,0 +1,10 @@
+<View>
+  <Header value="Target classes: person, car, dog, bicycle. See annotation/LABELING_GUIDELINES.md"/>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false"/>
+  <RectangleLabels name="label" toName="image">
+    <Label value="person" background="#1f77b4"/>
+    <Label value="car" background="#ff7f0e"/>
+    <Label value="dog" background="#2ca02c"/>
+    <Label value="bicycle" background="#d62728"/>
+  </RectangleLabels>
+</View>
