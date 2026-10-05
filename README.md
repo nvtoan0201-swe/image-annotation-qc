@@ -56,12 +56,18 @@ uv run scripts/validate_images.py
 2. Create the project `coco128-subset-bbox` and paste
    `annotation/label_studio_config.xml` into *Settings → Labeling Interface →
    Code* (classes: `person`, `car`, `dog`, `bicycle`).
-3. Import `data/annotations/tasks.json`.
-4. Annotate all **75 images** following `annotation/LABELING_GUIDELINES.md`;
+3. Add the local files connection so Label Studio may serve the mounted
+   images: *Settings → Cloud Storage → Add Source Storage → Local Files*, set
+   the path to `/label-studio/data/data`, click **Save** (do not sync — the
+   tasks come from `tasks.json`). Since Label Studio 1.23 the
+   `/data/local-files/` endpoint only serves files that belong to a
+   configured storage connection.
+4. Import `data/annotations/tasks.json`.
+5. Annotate all **75 images** following `annotation/LABELING_GUIDELINES.md`;
    record unsure cases in `annotation/ANNOTATION_NOTES.md`.
-5. Export COCO (*Project → Export → COCO*) and save the JSON as
+6. Export COCO (*Project → Export → COCO*) and save the JSON as
    `data/annotations/annotations.json`.
-6. `./scripts/label_studio.sh stop`.
+7. `./scripts/label_studio.sh stop`.
 
 ### 4. Quality control
 
