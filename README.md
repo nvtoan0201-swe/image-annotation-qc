@@ -90,6 +90,11 @@ This step cannot be automated and is not pretended to be complete.
    # docker compose -f annotation/docker-compose.yml up -d
    ```
 
+   Verified on this machine: Label Studio 1.23.2 starts, serves `/health`
+   (HTTP 200) and serves local files only to authenticated sessions
+   (Docker 29, Ubuntu 26.04). `./scripts/label_studio.sh reset` removes the
+   container and all local Label Studio state.
+
 2. Open **http://localhost:8080** and create a local account on first run
    (`LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true` is already configured;
    all data stays in `.labelstudio/`, which is git-ignored).
