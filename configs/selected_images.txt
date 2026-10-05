@@ -1,0 +1,89 @@
+# Images selected from the coco128 raw pool for manual bounding-box annotation.
+#
+# Selection rule: keep every coco128 image that (a) exists as a .jpg in the archive
+# and (b) contains at least one object of the target classes (person, car, dog,
+# bicycle) according to the original COCO reference labels shipped with coco128.
+# The reference labels were used only to choose WHICH images to annotate. They are
+# NOT the annotations of this project.
+#
+# Derived with the coco128 reference labels (class ids: 0=person, 1=bicycle,
+# 2=car, 16=dog). Deterministic and re-derivable; see data/README.md.
+#
+# Note: coco128 contains two label files without images (000000000656,
+# 000000000659) and two images without labels (000000000250, 000000000508).
+# Condition (a) removes the label-only entries.
+000000000036.jpg
+000000000042.jpg
+000000000049.jpg
+000000000061.jpg
+000000000064.jpg
+000000000071.jpg
+000000000074.jpg
+000000000077.jpg
+000000000086.jpg
+000000000094.jpg
+000000000109.jpg
+000000000110.jpg
+000000000113.jpg
+000000000127.jpg
+000000000136.jpg
+000000000149.jpg
+000000000151.jpg
+000000000165.jpg
+000000000192.jpg
+000000000201.jpg
+000000000241.jpg
+000000000247.jpg
+000000000257.jpg
+000000000260.jpg
+000000000294.jpg
+000000000307.jpg
+000000000308.jpg
+000000000309.jpg
+000000000315.jpg
+000000000322.jpg
+000000000326.jpg
+000000000328.jpg
+000000000338.jpg
+000000000357.jpg
+000000000359.jpg
+000000000360.jpg
+000000000368.jpg
+000000000370.jpg
+000000000382.jpg
+000000000389.jpg
+000000000394.jpg
+000000000395.jpg
+000000000397.jpg
+000000000400.jpg
+000000000415.jpg
+000000000419.jpg
+000000000428.jpg
+000000000431.jpg
+000000000436.jpg
+000000000443.jpg
+000000000446.jpg
+000000000459.jpg
+000000000471.jpg
+000000000474.jpg
+000000000488.jpg
+000000000490.jpg
+000000000510.jpg
+000000000520.jpg
+000000000529.jpg
+000000000531.jpg
+000000000532.jpg
+000000000536.jpg
+000000000540.jpg
+000000000542.jpg
+000000000544.jpg
+000000000564.jpg
+000000000569.jpg
+000000000572.jpg
+000000000581.jpg
+000000000589.jpg
+000000000623.jpg
+000000000625.jpg
+000000000634.jpg
+000000000641.jpg
+000000000650.jpg

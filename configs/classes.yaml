@@ -1,0 +1,44 @@
+# Project configuration.
+#
+# Dataset: coco128, a 128-image subset of MS COCO 2017 distributed by
+# Ultralytics as a single small archive. The images are the raw image pool;
+# annotations for this project are created manually in Label Studio.
+
+dataset:
+  name: coco128-subset
+  source: "Ultralytics coco128 (subset of MS COCO 2017, train2017 images)"
+  zip_url: "https://github.com/ultralytics/assets/releases/download/v0.0.0/coco128.zip"
+  zip_sha256: "61e5e3028863d8ffc3b81d6a514603954889f0edd5e4b44c4ce60b2da99aeb8e"
+  raw_pool_images: 128
+  image_license: "CC BY 4.0"
+  annotation_license: "CC BY 4.0 (annotations by Microsoft / COCO)"
+
+# Classes used for manual bounding-box annotation, in YOLO export order.
+classes:
+  - id: 0
+    name: person
+  - id: 1
+    name: car
+  - id: 2
+    name: dog
+  - id: 3
+    name: bicycle
+
+# Thresholds for automated quality-control warnings. Findings are reported,
+# never auto-deleted: a human decides what to fix.
+quality_control:
+  min_box_side_px: 4
+  min_box_area_px: 16
+  max_box_area_fraction: 0.8
+  duplicate_iou_threshold: 0.95
+  min_annotations_per_image: 1
+
+paths:
+  raw_images: data/raw/images
+  selected_images: configs/selected_images.txt
+  reference_labels: data/reference/labels
+  manifest: data/processed/images.csv
+  tasks: data/annotations/tasks.json
+  annotations: data/annotations/annotations.json
+  reports: reports
+  export: data/processed/yolo
