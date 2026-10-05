@@ -50,7 +50,7 @@ start)
             -e LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true \
             -e LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/data \
             -v "$DATA_DIR:/label-studio/data" \
-            -v "$ROOT/data/raw:/label-studio/data/raw:ro" \
+            -v "$ROOT/data:/label-studio/data/data:ro" \
             "$IMAGE"
     fi
     wait_for_server

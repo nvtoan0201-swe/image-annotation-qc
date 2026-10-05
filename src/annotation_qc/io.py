@@ -7,7 +7,7 @@ import hashlib
 import json
 import zipfile
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 
 import yaml
@@ -128,6 +128,18 @@ def read_manifest(path: Path) -> list[ImageRecord]:
         raise FileNotFoundError(f"dataset manifest not found: {path}")
     with path.open("r", encoding="utf-8", newline="") as handle:
         return [ImageRecord.from_row(row) for row in csv.DictReader(handle)]
+
+
+def local_file_url_prefix(config: dict[str, Any]) -> str:
+    """Label Studio URL prefix for raw images, derived from the config path.
+
+    label_studio.sh (and the compose file) mount the host ``data/`` directory
+    read-only at ``/label-studio/data/data``, so the URL path is the config
+    path under ``data/`` itself. Deriving it here keeps the tasks and the
+    mounts from drifting apart.
+    """
+    raw_images = PurePosixPath(str(config["paths"]["raw_images"]).strip("/"))
+    return f"/data/local-files/?d={raw_images.as_posix()}/"
 
 
 def write_label_studio_tasks(path: Path, records: Iterable[ImageRecord], url_prefix: str) -> int:

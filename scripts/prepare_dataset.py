@@ -17,13 +17,12 @@ from annotation_qc.io import (
     find_project_root,
     inspect_image,
     load_config,
+    local_file_url_prefix,
     read_selected_images,
     write_label_studio_tasks,
     write_manifest,
 )
 from annotation_qc.schemas import ImageRecord
-
-LOCAL_FILE_URL_PREFIX = "/data/local-files/?d=raw/"
 
 
 def build_records(image_dir, filenames, source: str, license_name: str) -> list[ImageRecord]:
@@ -116,7 +115,7 @@ def main() -> int:
     manifest_path = root / paths["manifest"]
     write_manifest(manifest_path, records)
     tasks = write_label_studio_tasks(
-        root / paths["tasks"], [r for r in records if r.is_ok], LOCAL_FILE_URL_PREFIX
+        root / paths["tasks"], [r for r in records if r.is_ok], local_file_url_prefix(config)
     )
 
     raw_pool = len(list(image_dir.glob("*.jpg")))

@@ -13,6 +13,7 @@ from annotation_qc.io import (
     inspect_image,
     load_coco,
     load_config,
+    local_file_url_prefix,
     read_manifest,
     read_selected_images,
     write_label_studio_tasks,
@@ -74,6 +75,11 @@ def test_write_label_studio_tasks(tmp_path):
     assert count == 2
     assert tasks[0]["id"] == 1
     assert tasks[0]["data"]["image"] == "/data/local-files/?d=raw/000000000001.jpg"
+
+
+def test_local_file_url_prefix_matches_mounted_data_dir():
+    config = {"paths": {"raw_images": "data/raw/images"}}
+    assert local_file_url_prefix(config) == "/data/local-files/?d=data/raw/images/"
 
 
 def test_read_selected_images_ignores_comments_and_blanks(tmp_path):

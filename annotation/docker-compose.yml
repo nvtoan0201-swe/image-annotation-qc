@@ -9,7 +9,7 @@ services:
       LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT: /label-studio/data
     volumes:
       - ../.labelstudio:/label-studio/data
-      - ../data/raw:/label-studio/data/raw:ro
+      - ../data:/label-studio/data/data:ro
     restart: unless-stopped
 
 # Start:  docker compose -f annotation/docker-compose.yml up -d
